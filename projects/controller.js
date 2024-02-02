@@ -1,5 +1,9 @@
 const Project = require("./model");
 
+const postRootPageMessage = async (req, res) => {
+    res.send("<p>THIS IS THE ROOT PAGE</p>");
+};
+
 const addProjects = async (req, res) => {
     try {
         const newProjects = await Project.insertMany(req.body)
@@ -59,5 +63,6 @@ const getProjectById = async (req, res) => {
 module.exports = {
     addProjects,
     getProjects,
-    getProjectById
+    getProjectById,
+    postRootPageMessage
 }
